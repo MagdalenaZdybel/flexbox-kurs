@@ -1,0 +1,169 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat';
+}
+.card-section {
+  background-color: #f7f8f8;
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.card {
+  height: 130px;
+  width: 100px;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 5px;
+  color: rgba(90, 92, 107, 0.85);
+  text-align: center;
+  font-size: 10px;
+  overflow: hidden;
+}
+.plate {
+  height: 70px;
+  width: 100%;
+  line-height: 70px;
+  font-size: 36px; 
+  color: #ffffff;
+}
+.card-1 .plate {
+  background: #997fbc;
+}
+.card-2 .plate {
+  background: #92ded2;
+}
+.card-3 .plate {
+  background: #fdc28a;
+}
+.card-4 .plate {
+  background: #ee8ebc;
+}
+.card-5 .plate {
+  background: #babc7f; 
+}
+.card-6 .plate {
+  background: #fdc28a;
+}
+.card-section-2 {
+	background-color: #f7f8f8;
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.card {
+  height: 130px;
+  width: 100px;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 5px;
+  color: rgba(90, 92, 107, 0.85);
+  text-align: center;
+  font-size: 10px;
+  overflow: hidden;
+}
+.plate {
+  height: 70px;
+  width: 100%;
+  line-height: 70px;
+  font-size: 36px; 
+  color: #ffffff;
+}
+.card-1 .plate {
+  background: #997fbc;
+}
+.card-2 .plate {
+  background: #92ded2;
+}
+.card-3 .plate {
+  background: #fdc28a;
+}
+.card-4 .plate {
+  background: #ee8ebc;
+}
+.card-section-3 {
+	background-color: #f7f8f8;
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.card {
+  height: 130px;
+  width: 100px;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 5px;
+  color: rgba(90, 92, 107, 0.85);
+  text-align: center;
+  font-size: 10px;
+  overflow: hidden;
+}
+.plate {
+  height: 70px;
+  width: 100%;
+  line-height: 70px;
+  font-size: 36px; 
+  color: #ffffff;
+}
+.card-1 .plate {
+  background: #997fbc;
+}
+.card-2 .plate {
+  background: #92ded2;
+}
+.card-3 .plate {
+  background: #fdc28a;
+}
+.card-4 .plate {
+  background: #ee8ebc;
+}
+.card-5 .plate {
+  background: #babc7f; 
+}
+.card-6 .plate {
+  background: #fdc28a;
+}
+/*Jak widzisz, wszystkie karty są teraz obok siebie. To wynika jednej z właściwości powiązanych z flexboxem: flex-drection. 
+Przyjmuje ona jedną z czterech wartości: row, row-reverse, column oraz column-reverse.
+
+Dodatkowo, jeśli nasz kontener jest zbyt wąski to karty kurczą się odpowiednio, tak by każda z nich miała 
+tę samą szerokość oraz by wszystkie były widoczne. Za to odpowiada właściwość flex-shrink, ale o niej opowiem Ci później. Po kolei:
+
+Wartością domyślną dla flex-direction jest row - jej efekt widzisz w podglądzie. Ustawia ona elementy wewnątrz 
+kontenera w wierszu, jeden obok drugiego, w kolejności od lewej do prawej. Widzimy teraz efekt końcowy - ale jak to tak naprawdę działa?
+
+W przypadku flexboxa musimy rozróżnić dwie osie, względem których pozycjonowane są elementy: main-axis oraz cross-axis
+ - czyli po prostu główną oś oraz przeciwstawną. Ustawiając flex-direction definiujemy, która z osi jest osią podstawową.
+  Za oś poziomą odpowiada row, natomiast za oś pionową - column.
+
+Za chwilę ustawimy flex-direction: column na naszym .card-section. Zanim jednak to nastąpi - najedź kursorem myszy 
+na podgląd po prawej stronie ekranu. Zobaczysz wizualizacje osi, na których bazuje flex-box - jak widzisz, 
+przy domyślnej wartości row naszą główną osią jest pozioma oś X.
+
+Zmieńmy więc domyślną wartość flex-direction na column.
+Mimo wszystko na pierwszy rzut oka widać już różnicę - w przypadku rozwiązania opartego na flexie, 
+wszystkie nasze elementy skurczyły się tak, by mieścić się w naszym kontenerze. Ponownie dzieje się 
+to za sprawą flex-shrink, o którym opowiem Ci w drugim rozdziale. Póki co, zobacz jak ustawienie 
+kierunku flexa na kierunek kolumnowy wpłynęło na osie w naszym kontenerze, najeżdżając kursorem na podgląd.
+
+Teraz to oś pionowa jest naszym main-axis. Natomiast oś przeciwstawna, cross-axis jest teraz osią poziomą. 
+Ich role zostały odwrócone. Wszystkie karty układają się teraz od góry do dołu, ponieważ to oś pionowa jest tą podstawową.
+
+Znamy więc sposób na zamianę naszej głównej osi wzdłuż której układa się nasz layout. Jednak to nie wszystko, 
+za co odpowiedzialne jest flex-direction - musimy jeszcze omówić właściwości row-reverse oraz column-reverse.
+*/
